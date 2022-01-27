@@ -14,7 +14,14 @@ const useStyles = makeStyles({
 
     },
     footer: {
-        textAlign: "center"
+        textAlign: "center",
+        borderTopStyle: "solid",
+        borderTopWidth: 1,
+        borderTopColor: "#D8D8D8",
+        marginTop: 50,
+        paddingTop: 25,
+        paddingBottom: 25,
+        backgroundColor: "#F5F5F5"
     },
     media: {
         height: 0,
@@ -24,7 +31,19 @@ const useStyles = makeStyles({
     brand: {
         fontWeight: "bold",
         fontSize: "1.5rem",
-        color: "white"
+        color: "white",
+        fontFamily: "raleway"
+    },
+    grow: {
+        flexGrow: 1
+    },
+    href: {
+        color: "white",
+        fontSize: "Large"
+    },
+    section: {
+        marginTop: 10,
+        marginBottom: 10,
     }
 });
 

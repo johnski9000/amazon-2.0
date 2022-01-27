@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import data from '../utils/data';
 import Image from 'next/image';
 import { ClassNames } from '@emotion/react';
-
+import NextLink from 'next/link';
 
 
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
           {data.products.map((product) => (
             <Grid item md={4} key={product.name}>
               <Card>
+              <NextLink href={`/product/${product.slug}`} passHref>
                 <CardActionArea>
                   <CardMedia 
                   style={{height: 400}}
@@ -30,6 +31,7 @@ export default function Home() {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
+                </NextLink>
                 <CardActions>
                   <Typography style={{paddingLeft: 8}}>
                     ${product.price}
