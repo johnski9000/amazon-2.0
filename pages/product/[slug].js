@@ -4,11 +4,13 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import data from '../../utils/data';
 import NextLink from 'next/link';
-import { ClassNames } from '@emotion/react';
 import useStyles from '../../utils/styles';
 import Image from 'next/image';
 
+
+
 export default function ProductScreen() {
+    
   const classes = useStyles();
   const router = useRouter();
   const { slug } = router.query;
@@ -17,15 +19,17 @@ export default function ProductScreen() {
     return <div>Product not found!</div>;
   }
   return (
-    <Layout title={product.name}>
+    <Layout title={product.name} description={product.description} >
       <div className={classes.section}>
         <NextLink href="/" passHref>
-          <Link style={{ color: 'black', textDecoration: 'none' }}>
-            <Typography>back to products</Typography>
+          <Link style={{ color: 'black', textDecoration: 'none', }} >
+            <Typography style={{marginTop: 40}}><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" style={{width:20, height: 20, marginRight: 10}}>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+</svg>back to products</Typography>
           </Link>
         </NextLink>
       </div>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} style={{marginTop: 40}}>
         <Grid item md={6} xs={12}>
           <Image
             src={product.image}
@@ -38,7 +42,7 @@ export default function ProductScreen() {
         <Grid item md={3} xs={12}>
           <List>
             <ListItem>
-              <Typography>{product.name}</Typography>
+              <Typography component="h1" variant="h1" >{product.name}</Typography>
             </ListItem>
             <ListItem>
               <Typography>Category: {product.category}</Typography>
