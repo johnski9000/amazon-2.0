@@ -5,6 +5,7 @@ import db from '../utils/db';
 import Product from '../models/Product';
 
 
+
 export default function Home(props) {
   const { products } = props;
   return (
@@ -34,7 +35,7 @@ export default function Home(props) {
                 <CardActions>
                   <Typography style={{paddingLeft: 8}}>
                     ${product.price}
-                    <Button size="small" color="primary">Add to cart</Button>
+                    <Button size="small" color="primary" >Add to cart</Button>
                   </Typography>
                 </CardActions>
               </Card>
